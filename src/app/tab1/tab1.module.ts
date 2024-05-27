@@ -1,10 +1,13 @@
-import { IonicModule } from '@ionic/angular';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 import { Tab1Page } from './tab1.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
+import { CardTradeComponent } from '../components/card-trade/card-trade.component';
+import { ChartComponent } from '../components/chart/chart.component';
+
+import { LoadingComponentModule } from '../app-loader/app-loader.module';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
 @NgModule({
@@ -12,8 +15,10 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    LoadingComponentModule,
+    Tab1PageRoutingModule,
+    ChartComponent,
+    CardTradeComponent
   ],
   declarations: [Tab1Page]
 })

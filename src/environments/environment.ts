@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  connectionUrl: 'wss://stream.binance.com:9443/ws/ethbtc@trade'
 };
 
 /*

@@ -1,0 +1,54 @@
+<ion-card *ngIf="trade">
+  <ion-card-header>
+    <ion-card-title>
+      <ion-icon name="trending-up-outline"></ion-icon>
+      Símbolo: {{ trade.s }}
+      <ion-icon
+        name="information-circle-outline"
+        (click)="presentPopover($event, 'Símbolo: Identifica o ativo negociado.')"
+      ></ion-icon>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p>
+      <ion-icon name="cash-outline"></ion-icon>
+      Preço: BTC {{ trade.p }}
+      <ion-icon
+        name="information-circle-outline"
+        (click)="presentPopover($event, 'Preço: Valor atual do ativo.')"
+      ></ion-icon>
+    </p>
+    <p>
+      <ion-icon name="cart-outline"></ion-icon>
+      Quantidade: ETH {{ trade.q }}
+      <ion-icon
+        name="information-circle-outline"
+        (click)="presentPopover($event, 'Quantidade: Número de unidades negociadas.')"
+      ></ion-icon>
+    </p>
+    <p>
+      <ion-icon name="document-outline"></ion-icon>
+      ID da Transação: {{ trade.t }}
+    </p>
+    <p>
+      <ion-icon name="bookmark-outline"></ion-icon>
+      ID do Comprador: {{ trade.b }}
+    </p>
+    <p>
+      <ion-icon name="bookmark-outline"></ion-icon>
+      ID do Vendedor: {{ trade.a }}
+    </p>
+    <p>
+      <ion-icon name="time-outline"></ion-icon>
+      Data e Hora: {{ trade.T | date:'medium' }}
+    </p>
+    <p>
+      <ion-icon name="analytics-outline"></ion-icon>
+      Market Maker: {{ trade.m ? 'Sim' : 'Não' }}
+    </p>
+    <p>
+      <ion-icon name="stats-chart-outline"></ion-icon>
+      Ignorar: {{ trade.M ? 'Sim' : 'Não' }}
+    </p>
+  </ion-card-content>
+</ion-card>

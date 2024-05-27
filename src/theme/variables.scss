@@ -1,2 +1,26 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+:root {
+  --chart-line-color-light: #1f3c7c;
+  --chart-line-color-dark: #1f3c7c; /* Usando a cor primária do Ionic para dark mode */
+  --chart-tooltip-bg-light: #fff;
+  --chart-tooltip-bg-dark: #333;
+  --chart-text-color-light: #000;
+  --chart-text-color-dark: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --chart-line-color: var(--chart-line-color-dark);
+    --chart-tooltip-bg: var(--chart-tooltip-bg-dark);
+    --chart-text-color: var(--chart-text-color-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --chart-line-color: var(--chart-line-color-light);
+    --chart-tooltip-bg: var(--chart-tooltip-bg-light);
+    --chart-text-color: var(--chart-text-color-light);
+  }
+}
