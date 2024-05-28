@@ -48,3 +48,5 @@ Durante a configuração do projeto, optei por remover o Jasmine e adicionar o J
 ## Captura de Tela
 
 ![Captura de Tela](./webkocket-challenge.png)
+
+Espero que esteja de acordo!
