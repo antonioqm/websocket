@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -11,8 +11,8 @@ import { IonicModule } from '@ionic/angular';
   ],
   templateUrl: `./popover.component.html`,
   styleUrl: './popover.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
 export class PopoverComponent {
   message: string = '';
 

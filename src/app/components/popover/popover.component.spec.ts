@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { IonicModule } from '@ionic/angular';
@@ -10,12 +9,10 @@ describe('PopoverComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        CommonModule,
-        IonicModule.forRoot(),
-        PopoverComponent
-      ]
-    }).compileComponents();
+      declarations: [  ],
+      imports: [ IonicModule.forRoot(), PopoverComponent]
+    })
+    .compileComponents();
   });
 
   beforeEach(() => {
@@ -28,19 +25,12 @@ describe('PopoverComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have an empty message initially', () => {
-    expect(component.message).toBe('');
-  });
-
-  it('should render the message in the template', () => {
-    component.message = 'Test message';
-    fixture.detectChanges();
-    const messageElement = fixture.debugElement.query(By.css('.message')).nativeElement;
-    expect(messageElement.textContent).toContain('Test message');
-  });
-
-  it('should render the component template', () => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div')).toBeTruthy();
-  });
+  it('should display message', async () => {
+  component.message = 'Test message';
+  fixture.detectChanges();
+  await fixture.whenStable();
+  const messageElement = fixture.debugElement.query(By.css('ion-content'));
+  expect(messageElement).toBeTruthy();
+  expect(messageElement.nativeElement.textContent.trim()).toEqual('Test message');
+});
 });

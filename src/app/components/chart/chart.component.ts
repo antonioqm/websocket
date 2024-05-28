@@ -1,4 +1,4 @@
-// chart.component.ts
+
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
@@ -15,8 +15,8 @@ import { WebSocketService } from 'src/app/services/websocket.service';
   imports: [CommonModule, IonicModule],
 })
 export class ChartComponent implements OnInit, OnDestroy {
-  private subscription!: Subscription;
-  private chart!: ECharts;
+  public subscription!: Subscription;
+  public chart!: ECharts;
   public prices: number[] = [];
   public times: string[] = [];
   public connectionStatus$:  Observable<boolean> = this.wsService.getConnectionStatus();
@@ -33,7 +33,6 @@ export class ChartComponent implements OnInit, OnDestroy {
 
     this.initializeChart();
 
-    // Listen for theme change
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     darkModeMediaQuery.addEventListener('change', () => this.updateChartTheme());
     this.updateChartTheme();

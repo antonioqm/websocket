@@ -1,26 +1,33 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed, async } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+import { of } from 'rxjs';
 import { TabsPage } from './tabs.page';
 
 describe('TabsPage', () => {
-  let component: TabsPage;
-  let fixture: ComponentFixture<TabsPage>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
       declarations: [TabsPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [IonicModule.forRoot()],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get: () => '1',
+              },
+            },
+            params: of({ id: '1' })
+          },
+        },
+      ],
     }).compileComponents();
-  });
+  }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TabsPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create the tabs page', () => {
+    const fixture = TestBed.createComponent(TabsPage);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
 });

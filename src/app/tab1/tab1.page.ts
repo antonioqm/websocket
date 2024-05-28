@@ -32,9 +32,9 @@ export class Tab1Page {
       });
     });
 
-    // Extrair os símbolos do par de negociação
-    this.baseCurrency = this.lastTrade?.s.substring(0, 3);  // 'ETH'
-    this.quoteCurrency = this.lastTrade?.s.substring(3);    // 'BTC'
+
+    this.baseCurrency = this.lastTrade?.s.substring(0, 3);
+    this.quoteCurrency = this.lastTrade?.s.substring(3);
   }
 
   toggleConnection(checked: boolean) {
