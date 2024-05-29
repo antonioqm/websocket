@@ -50,3 +50,11 @@ Durante a configuração do projeto, optei por remover o Jasmine e adicionar o J
 ![Captura de Tela](./webkocket-challenge.png)
 
 Espero que esteja de acordo!
+
+## Instalação
+
+Clone o repositório:
+
+```bash
+git clone [https://github.com/antonioqm/websocket]
+cd websocket
